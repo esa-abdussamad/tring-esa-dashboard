@@ -418,4 +418,57 @@ CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
     });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const ctx = document.getElementById('viabilityChart');
+  
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: [
+          'Desirability', 
+          'Feasibility', 
+          'Viability', 
+          'Solvability', 
+          'Uniqueness', 
+          'Problem Urgency'
+        ],
+        datasets: [{
+          label: 'Skor Kesiapan Inovasi Tring! ESA',
+          data: [95, 90, 92, 94, 90, 96],
+          backgroundColor: 'rgba(16, 185, 129, 0.2)', // Warna Hijau Pegadaian Transparan
+          borderColor: '#10B981',                     // Warna Garis Hijau
+          pointBackgroundColor: '#047857',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: '#047857'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            angleLines: { color: '#e5e7eb' },
+            grid: { color: '#f3f4f6' },
+            pointLabels: {
+              font: { size: 12, weight: 'bold' },
+              color: '#374151'
+            },
+            suggestedMin: 0,
+            suggestedMax: 100
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  }
+});
+</script>
+    
 </body></html>
